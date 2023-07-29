@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM with JS</title>
+</head>
+    <br>
+    <h1 onclick="changeText(this);">DOM Management with Javascript</h1>
+    <h2 id="title"  onclick="red(this);" onmousedown="green();" onmouseup="black();"
+    >DOM Management with Javascript</h2>
+    </br>
+    <h2 id="title2"  
+    >Second Title</h2>
+    <br>
+    <button >Show</button>
+    </br>
+    <div id="show">This is a div</div>
+    </br>
+    <form id="form">
+    Name: <input type="text" id="name" onchange="transform();" onfocus="background(this, 'yellow');" onblur="background(this, 'white')">
+    </br></br>
+    Last Name: <input type="text" id="lastName">
+    </form>
+    </body>
+    <script>
+
+
+        let lastName = document.getElementById("lastName");
+        let secondTitle = document.getElementById("title");
+        let newDiv = document.getElementById("show");
+        lastName.addEventListener('focus',modify)
+        lastName.addEventListener('blur',(event)=>{
+            console.log(event)
+            let element = event.target;
+            element.style.background = "white";
+        })
+        function modify(event){
+            let element = event.target;
+            element.style.background = "yellow";
+        }
+ 
+        secondTitle.onclick = function() {
+            changeText2(secondTitle);
+            red()
+        } 
+        newDiv.onclick = function() {
+            changeText2(newDiv);
+        } 
+        function background(inputElement, color){
+            inputElement.style.background = color;
+        }
+
+        function red(){
+            console.log("OnClick = RED")
+            secondTitle.style.color = "red";
+        }
+
+        function black(){
+            console.log("OnMouseUp = Blue")
+            secondTitle.style.color = "blue";
+        }
+
+        function green(){
+            console.log("OnMouseDown = green")
+            secondTitle.style.color = "green";
+        }
+
+        function transform(){
+            let name = document.getElementById("name")
+            name.value = name.value.toUpperCase();
+        }
+
+        function logOn(){
+            alert("logging webpage")
+            let text = " ";
+            if (navigator.cookieEnabled){
+                text = "Cookies enabled"
+            }
+            else{
+                text = "Cookies disbled"
+            }
+            document.getElementById("show").innerHTML = text
+        }
+
+        function changeText2(element){
+            element.innerHTML = "We can change this text too"
+        }
+
+        function changeText(title){
+            console.log(title)
+            console.log(title.innerHTML)
+            title.innerHTML = "New Content";
+            console.log(title.innerHTML)
+        }
+    </script>
+</body>
+</html>

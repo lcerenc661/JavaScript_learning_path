@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People List APP</title>
+    <link rel="stylesheet" href="CSS/style.css">
+  </head>
+  <body onload="showPeople();">
+    <div class="contenedor" id="cabecero">
+        <h1>People List</h1>
+    </div>
+    <div class="contenedor">
+        <div class="elemento">
+            <ul id="people">
+                <!-- <li>Juan Perez</li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="contenedor">
+        <div style="text-align: center;">
+            <button style="cursor: pointer;" onclick="addPerson();">+</button>
+        </div>
+        <form id="form">
+            <input type="text" name="name" id="name" placeholder="Enter Name">
+            <input type="text" name="lastName" id="lastName" placeholder="Enter Lastname">
+        </form>
+    </div>
+  </body>
+  <script src="JS/person.js"></script> 
+  <script src="JS/appPL.js"></script>
+</html>

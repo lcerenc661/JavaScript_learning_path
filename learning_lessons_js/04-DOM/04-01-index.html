@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with JS</title>
+    <style>
+        .blue{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title" class="blue">DOM with JS</h1>
+    <p id="paragraph" class="blue">Greetings!</p>
+    <p id="paragraph2">This is the second paragraph</p>
+    <p id="paragraph3" class="blue">This is the third paragraph</p>
+    
+</body>
+<script>
+    let title = document.getElementById("title");
+    let paragraph = document.getElementById("paragraph");
+    let paragraphs = document.getElementsByTagName('p')
+    let blueElements = document.getElementsByClassName('blue')
+    console.log(`paragraph No. =  ${paragraphs.length}`);
+    for(element of paragraphs){
+        console.log(element.innerHTML)
+    }
+    console.log(`blue elements = ${blueElements.length} `)
+    for(let i=0; i<blueElements.length; i++){
+        console.log(blueElements[i].innerHTML)
+    }
+</script>
+</html>

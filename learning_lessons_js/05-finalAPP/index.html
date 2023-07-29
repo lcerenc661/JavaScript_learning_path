@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="getValues();">
+    <div class="header">
+        <div class="budget">
+            <div class="budget_title">
+                Budget Available
+            </div>
+            <div class="budget_value" id="totalBudget">
+                + 2,000.00
+            </div>
+            <div class="income_budget cleanStyle">
+                <div class="income_budget--text">Ingresos</div>  
+                <div class="right">
+                    <div class="income_budget--value" id="totalIncomes">+ 4,000.00</div>
+                    <div class="income_budget--percentage" id="incomePercentage">&nbsp;</div>
+                </div> 
+            </div>
+            <div class="outcome_budget cleanStyle">
+                <div class="outcome_budget--text">Outcome</div>  
+                <div class="right">
+                    <div class="outcome_budget--value" id="totalOutcomes">- 2,000.00</div>
+                    <div class="outcome_budget--percentage" id="outcomePercentage">45%</div>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <form id="form" onsubmit="return false;">
+        <div class="add">
+            <div class="add_container">
+                <select class="add_type" id="type">
+                    <option value="income" selected>+</option>
+                    <option value="outcome">-</option>
+                </select>
+                <input type="text" class="add_description" id="description" placeholder="Description"/>
+                <input type="number" class="add_value" id="value" placeholder="Value" step="any"/>
+                <button class="add_btn" onclick="addElement();"><ion-icon name="checkmark-circle-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="container cleanStyle">
+        <div class="income">
+            <h2 class="title_income">Income </h2>
+            <div id="income-list">
+                <div class="element cleanStyle">
+                    <div class="element_description">Salary</div>
+                    <div class="right cleanStyle">
+                        <div class="value_element">+ 8.000.00</div> 
+                        <div class="delete_element">
+                            <button class="delete_element--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="outcome">
+            <h2 class="title_outcome"> Outcome</h2>
+            <div id="outcome-list">
+                <div class="element cleanStyle">
+                    <div class="element_description">clothes</div>
+                    <div class="right cleanStyle">
+                        <div class="value_element">-4.000.00</div>
+                        <div class="percentage_element">22%</div>
+                        <button class="delete_element--btn">
+                            <ion-icon name="close-circle-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<script src="js/Data.js"></script>
+<script src="js/Income.js"></script>
+<script src="js/Outcome.js"></script>
+<script src="js/app.js"></script>
+</html>

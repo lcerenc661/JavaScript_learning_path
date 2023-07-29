@@ -1,0 +1,92 @@
+h1 {
+  color: slategrey;
+}
+h2{
+    color: lightslategrey;
+}
+p {
+  color: brown;
+  background-color: blanchedalmond;
+  padding: 15px 30px;
+  border: 10px solid papayawhip;
+  margin: auto 50px;
+  text-align: center;
+}
+
+/* LINKS */
+a:link {
+  color: darkred;
+  text-decoration: none;
+}
+a:visited {
+  color: brown;
+  text-decoration: none;
+}
+a:hover {
+  color: gold;
+  text-decoration: underline;
+}
+a:active {
+  color: black;
+}
+
+table {
+  width: 80%;
+  margin: 40px 80px;
+}
+/* TABLES */
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+  font-family: monospace;
+}
+td {
+  text-align: center;
+  background-color: blanchedalmond;
+}
+th {
+  text-align: left;
+  background-color: darkgrey;
+}
+
+/* LIST */
+ul {
+  list-style-type: none;
+  background-color: blanchedalmond;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+ul li {
+  float: left;
+  text-align: center;
+  padding: 10px 40px;
+}
+
+ol {
+    list-style: none;
+    counter-reset: counter;
+}
+ol li{
+    counter-increment: counter;
+}
+ol li::before{
+    content: "Language " counter(counter) ") ";
+    color: coral;
+
+}
+span{
+    color:rgb(118, 114, 111);
+    border: solid 1px black;
+    background-color: gainsboro;
+}
+div{
+    border: 10 px solid blueviolet
+}
+
+div p{
+    background-color: cyan;
+}
